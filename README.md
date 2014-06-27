@@ -1,4 +1,4 @@
-product-catalog
+Merchant-product-catalog
 ===============
 
-application with backbone.js, require.js
+Application implemented with backbone.js, require.js without any backend.

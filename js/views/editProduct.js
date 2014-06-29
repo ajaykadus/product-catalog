@@ -28,6 +28,7 @@ define([
             var updatedProduct = new Product(data);
             updatedProduct.set('id',this.model.get('id'),{silent: true});
             Backbone.Events.trigger('changed_product', updatedProduct);
+            Backbone.history.navigate('home', false);
             $(".content").show();
             $(".js-add-product").show();
             $(".js-product-details").html('');

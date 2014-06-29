@@ -28,7 +28,7 @@ define([
         },
         editProduct: function(id) {
             var editView = new EditProduct({model:pCollection.get(id)});
-            $(".content").hide();
+            $(".content, .js-sort").hide();
             $(".js-product-details").html(editView.render().el);
 
         }

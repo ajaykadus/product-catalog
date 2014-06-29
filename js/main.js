@@ -27,7 +27,6 @@ require(
             MyApp.collection = new Products(MyApp.previewProducts);
             pCollection = new Products(MyApp.MerchantProducts);
             var layout = new LayoutView({collection: MyApp.collection});
-            $('body').append(layout.render().el)
         });
     }
 );

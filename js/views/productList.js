@@ -25,8 +25,8 @@ define(
                 return this;
             },
             updateProductView: function(model) {
+                pCollection.add(model,{merge:true});
                 var UpdatedProductView = new productListItemView({model: model});
-                console.log(model,UpdatedProductView.render().el,"whihih");
                 this.$el.find('.item-'+model.id).replaceWith(UpdatedProductView.render().el);
             },
             addProduct : function() {

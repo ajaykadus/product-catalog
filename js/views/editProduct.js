@@ -8,7 +8,16 @@ define([
 ], function (Backbone, Product, editProductTmpl) {
     var ItemView = Backbone.View.extend({
         events: {
-            "click .js-update-product": "updateProduct"
+            "click .js-update-product": "updateProduct",
+            'keypress input': 'processKey'
+        },
+        processKey: function(e) {
+            if(e.which === 13) {// enter key
+                this.updateProduct(e);
+            }
+            else{
+                return true;
+            }
         },
         updateProduct: function (e) {
             e.preventDefault();
@@ -17,7 +26,7 @@ define([
                 data[el.id] = $(el).val();
             });
             var updatedProduct = new Product(data);
-            updatedProduct.set('id',this.model.get('id'))
+            updatedProduct.set('id',this.model.get('id'),{silent: true});
             Backbone.Events.trigger('changed_product', updatedProduct);
             $(".content").show();
             $(".js-add-product").show();

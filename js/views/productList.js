@@ -13,7 +13,7 @@ define(
             initialize: function () {
                 this.collection = this.collection || this.options.collection;
                 this.listenTo(this.collection, 'add', this.addProduct);
-                Backbone.Events.on('changed_product',this.updateProductView,this);
+                Backbone.Events.on('changed_product', this.updateProductView, this);
             },
             render: function () {
                 var that = this;
@@ -24,13 +24,13 @@ define(
                 });
                 return this;
             },
-            updateProductView: function(model) {
-                pCollection.add(model,{merge:true});
+            updateProductView: function (model) {
+                pCollection.add(model, {merge: true});
                 var UpdatedProductView = new productListItemView({model: model});
-                this.$el.find('.item-'+model.id).replaceWith(UpdatedProductView.render().el);
+                this.$el.find('.item-' + model.id).replaceWith(UpdatedProductView.render().el);
             },
-            addProduct : function() {
-                var productView = new productListItemView({model: this.collection.last()});
+            addProduct: function (model) {
+                var productView = new productListItemView({model: model});
                 this.$el.append(productView.render().el);
             }
         });

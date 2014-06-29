@@ -10,9 +10,9 @@ define(
             className: "card-content",
             events: {
             },
-            initialize: function (collection) {
-                this.collection = collection;
-                this.listenTo(collection, 'add', this.addProduct);
+            initialize: function () {
+                this.collection = this.collection || this.options.collection;
+                this.listenTo(this.collection, 'add', this.addProduct);
                 Backbone.Events.on('changed_product',this.updateProductView,this);
             },
             render: function () {

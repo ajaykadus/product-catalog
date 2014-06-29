@@ -110,7 +110,6 @@
     border: 1px double gray;
     background: lightseagreen;
     padding: 5px;
-    /* float: right; */
     font-size: 15px;
     margin: 45px;
 }
@@ -154,7 +153,8 @@ form#add input, form#add label {
     font-size: 13px;
     text-decoration: none;
 }
-.p-actions li a{
+
+.p-actions li a {
     cursor: pointer;
 }
 
@@ -163,33 +163,50 @@ form#add input, form#add label {
     color: gray;
     text-decoration: underline;
 }
+
 .product-details {
     border-left: 2px solid #f1f1f1;
     overflow: hidden;
     list-style: none;
 }
-.product-details li{
+
+.product-details li {
     padding: 0 0 20px;
     line-height: 1.3;
     overflow: hidden;
 }
+
 .p-image {
     float: left;
 }
-.product-details label{
+
+.product-details label {
     font-size: 13px;
     font-weight: bold;
     color: #666;
     margin: 0 0 3px;
     display: block;
 }
-.product-details .detaila span{
+
+.product-details .detaila span {
     margin: 0 0 15px;
     color: #333;
     display: block;
     word-wrap: break-word;
 }
+
 .home-btn {
     color: #069;
     text-decoration: underline;
+}
+
+.sort-products {
+    cursor: pointer;
+    color: white;
+    border: 1px double gray;
+    background: goldenrod;
+    padding: 0px 5px 0px 5px;
+    font-size: 15px;
+    float: right;
+
 }

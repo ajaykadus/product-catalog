@@ -26,6 +26,9 @@ require(
             var MyApp = new APP();
             MyApp.collection = new Products(MyApp.previewProducts);
             pCollection = new Products(MyApp.MerchantProducts);
+            MyApp.collection.comparator = function(product) {
+                return parseFloat(product.get("value"));
+            };
             var layout = new LayoutView({collection: MyApp.collection});
         });
     }
